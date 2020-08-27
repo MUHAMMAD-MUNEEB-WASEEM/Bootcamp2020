@@ -21,14 +21,14 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-        - name: Install NodeJS
-          uses: actions/setup-node@v2-beta    #nodejs installation on this vm
-          with:
-            node-version: 12
-          name: Install Surge 
-          run: npm install -g surge           #surge installation
-          name: Run Surge                     #deploying our website on surge
-          run: surge ./ bootcamp2020firsthtml.surge.sh --token $ {{secrets.BOOTCAMP_PROJECT001_SURGE_TOKEN}}
+      - name: Install NodeJS
+        uses: actions/setup-node@v2-beta    #nodejs installation on this vm
+        with:
+          node-version: 12
+      - name: Install Surge 
+        run: npm install -g surge           #surge installation
+      - name: Run Surge                     #deploying our website on surge
+        run: surge ./ bootcamp2020firsthtml.surge.sh --token $ {{secrets.BOOTCAMP_PROJECT001_SURGE_TOKEN}}
           
           #domain name :
           #bootcamp2020firsthtml.surge.sh
